@@ -1,0 +1,49 @@
+Shiny App Assignment
+========================================================
+author: Anand Agrawal
+date: 4th April 2020
+autosize: true
+
+Purpose
+========================================================
+
+This app helps visualize the impact of COVID19 virus.
+
+
+This app shows an interactive and reactive bar plot for countries most affected.
+
+Plot is based on Plotly.
+
+Details
+========================================================
+
+App shows below details of COVID19 cases for few selected countries
+
+- Confirmed
+- Recovered
+- Deaths
+
+User have option, a drop down list, where user can choose between Recovered or Deaths total for these countries and plot will be updated accordingly.
+
+Summary of Data
+========================================================
+
+Below you can see the summary of data used in creating the plot
+
+```{r, echo=TRUE}
+library(readr)
+covid19 <- read_csv("covid19_4Apr.csv")
+covid19 <- subset(covid19, Deaths>200)
+summary(covid19)
+```
+
+Reference and Notes
+========================================================
+
+Data was taken from below github repo on 4th April 2020.
+<https://github.com/CSSEGISandData/COVID-19>.
+
+Data was processed as required for the app to work.
+
+Plesae note that the data may not be accurate and is solely used to demonstrate the working shiny app.
+
